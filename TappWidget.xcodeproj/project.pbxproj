@@ -1,0 +1,898 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2C4C1D2C2D88AB5F009ABDF2 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C4C1D2B2D88AB5F009ABDF2 /* WidgetKit.framework */; };
+		2C4C1D2E2D88AB5F009ABDF2 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C4C1D2D2D88AB5F009ABDF2 /* SwiftUI.framework */; };
+		2C4C1D3F2D88AB61009ABDF2 /* TappWidgetExtensionExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 2C4C1D292D88AB5F009ABDF2 /* TappWidgetExtensionExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		2C4C1D672D88AD28009ABDF2 /* ExtensionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4C1D662D88AD28009ABDF2 /* ExtensionManager.swift */; };
+		2C4C1D802D88ADDA009ABDF2 /* NetworkLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4C1D7A2D88ADDA009ABDF2 /* NetworkLogger.swift */; };
+		2C4C1D812D88ADDA009ABDF2 /* HTTPTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4C1D792D88ADDA009ABDF2 /* HTTPTask.swift */; };
+		2C4C1D822D88ADDA009ABDF2 /* JSONParameterEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4C1D6E2D88ADDA009ABDF2 /* JSONParameterEncoder.swift */; };
+		2C4C1D832D88ADDA009ABDF2 /* RequestParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4C1D742D88ADDA009ABDF2 /* RequestParser.swift */; };
+		2C4C1D842D88ADDA009ABDF2 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4C1D7E2D88ADDA009ABDF2 /* Persistence.swift */; };
+		2C4C1D852D88ADDA009ABDF2 /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4C1D782D88ADDA009ABDF2 /* HTTPMethod.swift */; };
+		2C4C1D862D88ADDA009ABDF2 /* ParameterEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4C1D6F2D88ADDA009ABDF2 /* ParameterEncoding.swift */; };
+		2C4C1D872D88ADDA009ABDF2 /* URLParameterEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4C1D702D88ADDA009ABDF2 /* URLParameterEncoding.swift */; };
+		2C4C1D882D88ADDA009ABDF2 /* EndPointType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4C1D772D88ADDA009ABDF2 /* EndPointType.swift */; };
+		2C4C1D892D88ADDA009ABDF2 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4C1D762D88ADDA009ABDF2 /* API.swift */; };
+		2C4C1D8A2D88ADDA009ABDF2 /* NetworkRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4C1D7B2D88ADDA009ABDF2 /* NetworkRouter.swift */; };
+		2C4C1D8B2D88ADDA009ABDF2 /* NetworkManagerNew.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4C1D722D88ADDA009ABDF2 /* NetworkManagerNew.swift */; };
+		2C4C1D8C2D88ADDA009ABDF2 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4C1D6C2D88ADDA009ABDF2 /* Extensions.swift */; };
+		2C4C1D8D2D88ADDA009ABDF2 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4C1D6A2D88ADDA009ABDF2 /* Constants.swift */; };
+		2C4C1D8E2D88ADDA009ABDF2 /* NetworkLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4C1D7A2D88ADDA009ABDF2 /* NetworkLogger.swift */; };
+		2C4C1D8F2D88ADDA009ABDF2 /* HTTPTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4C1D792D88ADDA009ABDF2 /* HTTPTask.swift */; };
+		2C4C1D902D88ADDA009ABDF2 /* JSONParameterEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4C1D6E2D88ADDA009ABDF2 /* JSONParameterEncoder.swift */; };
+		2C4C1D912D88ADDA009ABDF2 /* RequestParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4C1D742D88ADDA009ABDF2 /* RequestParser.swift */; };
+		2C4C1D922D88ADDA009ABDF2 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4C1D7E2D88ADDA009ABDF2 /* Persistence.swift */; };
+		2C4C1D932D88ADDA009ABDF2 /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4C1D782D88ADDA009ABDF2 /* HTTPMethod.swift */; };
+		2C4C1D942D88ADDA009ABDF2 /* ParameterEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4C1D6F2D88ADDA009ABDF2 /* ParameterEncoding.swift */; };
+		2C4C1D952D88ADDA009ABDF2 /* URLParameterEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4C1D702D88ADDA009ABDF2 /* URLParameterEncoding.swift */; };
+		2C4C1D962D88ADDA009ABDF2 /* EndPointType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4C1D772D88ADDA009ABDF2 /* EndPointType.swift */; };
+		2C4C1D972D88ADDA009ABDF2 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4C1D762D88ADDA009ABDF2 /* API.swift */; };
+		2C4C1D982D88ADDA009ABDF2 /* NetworkRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4C1D7B2D88ADDA009ABDF2 /* NetworkRouter.swift */; };
+		2C4C1D992D88ADDA009ABDF2 /* NetworkManagerNew.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4C1D722D88ADDA009ABDF2 /* NetworkManagerNew.swift */; };
+		2C4C1D9A2D88ADDA009ABDF2 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4C1D6C2D88ADDA009ABDF2 /* Extensions.swift */; };
+		2C4C1D9B2D88ADDA009ABDF2 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4C1D6A2D88ADDA009ABDF2 /* Constants.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		2C4C1D092D88AB25009ABDF2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2C4C1CF02D88AB24009ABDF2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2C4C1CF72D88AB24009ABDF2;
+			remoteInfo = TappWidget;
+		};
+		2C4C1D132D88AB25009ABDF2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2C4C1CF02D88AB24009ABDF2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2C4C1CF72D88AB24009ABDF2;
+			remoteInfo = TappWidget;
+		};
+		2C4C1D3D2D88AB61009ABDF2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2C4C1CF02D88AB24009ABDF2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2C4C1D282D88AB5F009ABDF2;
+			remoteInfo = TappWidgetExtensionExtension;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		2C4C1D442D88AB61009ABDF2 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				2C4C1D3F2D88AB61009ABDF2 /* TappWidgetExtensionExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		2C4C1CF82D88AB24009ABDF2 /* TappWidget.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TappWidget.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2C4C1D082D88AB25009ABDF2 /* TappWidgetTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TappWidgetTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2C4C1D122D88AB25009ABDF2 /* TappWidgetUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TappWidgetUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2C4C1D292D88AB5F009ABDF2 /* TappWidgetExtensionExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = TappWidgetExtensionExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		2C4C1D2B2D88AB5F009ABDF2 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		2C4C1D2D2D88AB5F009ABDF2 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		2C4C1D662D88AD28009ABDF2 /* ExtensionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionManager.swift; sourceTree = "<group>"; };
+		2C4C1D6A2D88ADDA009ABDF2 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		2C4C1D6C2D88ADDA009ABDF2 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		2C4C1D6E2D88ADDA009ABDF2 /* JSONParameterEncoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONParameterEncoder.swift; sourceTree = "<group>"; };
+		2C4C1D6F2D88ADDA009ABDF2 /* ParameterEncoding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParameterEncoding.swift; sourceTree = "<group>"; };
+		2C4C1D702D88ADDA009ABDF2 /* URLParameterEncoding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLParameterEncoding.swift; sourceTree = "<group>"; };
+		2C4C1D722D88ADDA009ABDF2 /* NetworkManagerNew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManagerNew.swift; sourceTree = "<group>"; };
+		2C4C1D742D88ADDA009ABDF2 /* RequestParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestParser.swift; sourceTree = "<group>"; };
+		2C4C1D762D88ADDA009ABDF2 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		2C4C1D772D88ADDA009ABDF2 /* EndPointType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPointType.swift; sourceTree = "<group>"; };
+		2C4C1D782D88ADDA009ABDF2 /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
+		2C4C1D792D88ADDA009ABDF2 /* HTTPTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPTask.swift; sourceTree = "<group>"; };
+		2C4C1D7A2D88ADDA009ABDF2 /* NetworkLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkLogger.swift; sourceTree = "<group>"; };
+		2C4C1D7B2D88ADDA009ABDF2 /* NetworkRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRouter.swift; sourceTree = "<group>"; };
+		2C4C1D7E2D88ADDA009ABDF2 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
+		2C4C1D9C2D88AEBD009ABDF2 /* TappWidgetExtensionExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TappWidgetExtensionExtension.entitlements; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		2C4C1D402D88AB61009ABDF2 /* Exceptions for "TappWidgetExtension" folder in "TappWidgetExtensionExtension" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = 2C4C1D282D88AB5F009ABDF2 /* TappWidgetExtensionExtension */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		2C4C1CFA2D88AB24009ABDF2 /* TappWidget */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = TappWidget;
+			sourceTree = "<group>";
+		};
+		2C4C1D0B2D88AB25009ABDF2 /* TappWidgetTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = TappWidgetTests;
+			sourceTree = "<group>";
+		};
+		2C4C1D152D88AB25009ABDF2 /* TappWidgetUITests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = TappWidgetUITests;
+			sourceTree = "<group>";
+		};
+		2C4C1D2F2D88AB5F009ABDF2 /* TappWidgetExtension */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				2C4C1D402D88AB61009ABDF2 /* Exceptions for "TappWidgetExtension" folder in "TappWidgetExtensionExtension" target */,
+			);
+			path = TappWidgetExtension;
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		2C4C1CF52D88AB24009ABDF2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2C4C1D052D88AB25009ABDF2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2C4C1D0F2D88AB25009ABDF2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2C4C1D262D88AB5F009ABDF2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2C4C1D2E2D88AB5F009ABDF2 /* SwiftUI.framework in Frameworks */,
+				2C4C1D2C2D88AB5F009ABDF2 /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2C4C1CEF2D88AB24009ABDF2 = {
+			isa = PBXGroup;
+			children = (
+				2C4C1D9C2D88AEBD009ABDF2 /* TappWidgetExtensionExtension.entitlements */,
+				2C4C1D6B2D88ADDA009ABDF2 /* Constants */,
+				2C4C1D6D2D88ADDA009ABDF2 /* Extensions */,
+				2C4C1D7D2D88ADDA009ABDF2 /* Networking */,
+				2C4C1D7F2D88ADDA009ABDF2 /* Persistence */,
+				2C4C1CFA2D88AB24009ABDF2 /* TappWidget */,
+				2C4C1D0B2D88AB25009ABDF2 /* TappWidgetTests */,
+				2C4C1D152D88AB25009ABDF2 /* TappWidgetUITests */,
+				2C4C1D2F2D88AB5F009ABDF2 /* TappWidgetExtension */,
+				2C4C1D2A2D88AB5F009ABDF2 /* Frameworks */,
+				2C4C1CF92D88AB24009ABDF2 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		2C4C1CF92D88AB24009ABDF2 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2C4C1CF82D88AB24009ABDF2 /* TappWidget.app */,
+				2C4C1D082D88AB25009ABDF2 /* TappWidgetTests.xctest */,
+				2C4C1D122D88AB25009ABDF2 /* TappWidgetUITests.xctest */,
+				2C4C1D292D88AB5F009ABDF2 /* TappWidgetExtensionExtension.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		2C4C1D2A2D88AB5F009ABDF2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2C4C1D2B2D88AB5F009ABDF2 /* WidgetKit.framework */,
+				2C4C1D2D2D88AB5F009ABDF2 /* SwiftUI.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		2C4C1D6B2D88ADDA009ABDF2 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				2C4C1D6A2D88ADDA009ABDF2 /* Constants.swift */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
+		2C4C1D6D2D88ADDA009ABDF2 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				2C4C1D662D88AD28009ABDF2 /* ExtensionManager.swift */,
+				2C4C1D6C2D88ADDA009ABDF2 /* Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		2C4C1D712D88ADDA009ABDF2 /* Encoding */ = {
+			isa = PBXGroup;
+			children = (
+				2C4C1D6E2D88ADDA009ABDF2 /* JSONParameterEncoder.swift */,
+				2C4C1D6F2D88ADDA009ABDF2 /* ParameterEncoding.swift */,
+				2C4C1D702D88ADDA009ABDF2 /* URLParameterEncoding.swift */,
+			);
+			path = Encoding;
+			sourceTree = "<group>";
+		};
+		2C4C1D732D88ADDA009ABDF2 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				2C4C1D722D88ADDA009ABDF2 /* NetworkManagerNew.swift */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		2C4C1D752D88ADDA009ABDF2 /* Parser */ = {
+			isa = PBXGroup;
+			children = (
+				2C4C1D742D88ADDA009ABDF2 /* RequestParser.swift */,
+			);
+			path = Parser;
+			sourceTree = "<group>";
+		};
+		2C4C1D7C2D88ADDA009ABDF2 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				2C4C1D762D88ADDA009ABDF2 /* API.swift */,
+				2C4C1D772D88ADDA009ABDF2 /* EndPointType.swift */,
+				2C4C1D782D88ADDA009ABDF2 /* HTTPMethod.swift */,
+				2C4C1D792D88ADDA009ABDF2 /* HTTPTask.swift */,
+				2C4C1D7A2D88ADDA009ABDF2 /* NetworkLogger.swift */,
+				2C4C1D7B2D88ADDA009ABDF2 /* NetworkRouter.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		2C4C1D7D2D88ADDA009ABDF2 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				2C4C1D712D88ADDA009ABDF2 /* Encoding */,
+				2C4C1D732D88ADDA009ABDF2 /* Manager */,
+				2C4C1D752D88ADDA009ABDF2 /* Parser */,
+				2C4C1D7C2D88ADDA009ABDF2 /* Service */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		2C4C1D7F2D88ADDA009ABDF2 /* Persistence */ = {
+			isa = PBXGroup;
+			children = (
+				2C4C1D7E2D88ADDA009ABDF2 /* Persistence.swift */,
+			);
+			path = Persistence;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		2C4C1CF72D88AB24009ABDF2 /* TappWidget */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2C4C1D1C2D88AB25009ABDF2 /* Build configuration list for PBXNativeTarget "TappWidget" */;
+			buildPhases = (
+				2C4C1CF42D88AB24009ABDF2 /* Sources */,
+				2C4C1CF52D88AB24009ABDF2 /* Frameworks */,
+				2C4C1CF62D88AB24009ABDF2 /* Resources */,
+				2C4C1D442D88AB61009ABDF2 /* Embed Foundation Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2C4C1D3E2D88AB61009ABDF2 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				2C4C1CFA2D88AB24009ABDF2 /* TappWidget */,
+			);
+			name = TappWidget;
+			packageProductDependencies = (
+			);
+			productName = TappWidget;
+			productReference = 2C4C1CF82D88AB24009ABDF2 /* TappWidget.app */;
+			productType = "com.apple.product-type.application";
+		};
+		2C4C1D072D88AB25009ABDF2 /* TappWidgetTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2C4C1D1F2D88AB25009ABDF2 /* Build configuration list for PBXNativeTarget "TappWidgetTests" */;
+			buildPhases = (
+				2C4C1D042D88AB25009ABDF2 /* Sources */,
+				2C4C1D052D88AB25009ABDF2 /* Frameworks */,
+				2C4C1D062D88AB25009ABDF2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2C4C1D0A2D88AB25009ABDF2 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				2C4C1D0B2D88AB25009ABDF2 /* TappWidgetTests */,
+			);
+			name = TappWidgetTests;
+			packageProductDependencies = (
+			);
+			productName = TappWidgetTests;
+			productReference = 2C4C1D082D88AB25009ABDF2 /* TappWidgetTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		2C4C1D112D88AB25009ABDF2 /* TappWidgetUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2C4C1D222D88AB25009ABDF2 /* Build configuration list for PBXNativeTarget "TappWidgetUITests" */;
+			buildPhases = (
+				2C4C1D0E2D88AB25009ABDF2 /* Sources */,
+				2C4C1D0F2D88AB25009ABDF2 /* Frameworks */,
+				2C4C1D102D88AB25009ABDF2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2C4C1D142D88AB25009ABDF2 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				2C4C1D152D88AB25009ABDF2 /* TappWidgetUITests */,
+			);
+			name = TappWidgetUITests;
+			packageProductDependencies = (
+			);
+			productName = TappWidgetUITests;
+			productReference = 2C4C1D122D88AB25009ABDF2 /* TappWidgetUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+		2C4C1D282D88AB5F009ABDF2 /* TappWidgetExtensionExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2C4C1D412D88AB61009ABDF2 /* Build configuration list for PBXNativeTarget "TappWidgetExtensionExtension" */;
+			buildPhases = (
+				2C4C1D252D88AB5F009ABDF2 /* Sources */,
+				2C4C1D262D88AB5F009ABDF2 /* Frameworks */,
+				2C4C1D272D88AB5F009ABDF2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				2C4C1D2F2D88AB5F009ABDF2 /* TappWidgetExtension */,
+			);
+			name = TappWidgetExtensionExtension;
+			packageProductDependencies = (
+			);
+			productName = TappWidgetExtensionExtension;
+			productReference = 2C4C1D292D88AB5F009ABDF2 /* TappWidgetExtensionExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		2C4C1CF02D88AB24009ABDF2 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1620;
+				LastUpgradeCheck = 1620;
+				TargetAttributes = {
+					2C4C1CF72D88AB24009ABDF2 = {
+						CreatedOnToolsVersion = 16.2;
+					};
+					2C4C1D072D88AB25009ABDF2 = {
+						CreatedOnToolsVersion = 16.2;
+						TestTargetID = 2C4C1CF72D88AB24009ABDF2;
+					};
+					2C4C1D112D88AB25009ABDF2 = {
+						CreatedOnToolsVersion = 16.2;
+						TestTargetID = 2C4C1CF72D88AB24009ABDF2;
+					};
+					2C4C1D282D88AB5F009ABDF2 = {
+						CreatedOnToolsVersion = 16.2;
+					};
+				};
+			};
+			buildConfigurationList = 2C4C1CF32D88AB24009ABDF2 /* Build configuration list for PBXProject "TappWidget" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 2C4C1CEF2D88AB24009ABDF2;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 2C4C1CF92D88AB24009ABDF2 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				2C4C1CF72D88AB24009ABDF2 /* TappWidget */,
+				2C4C1D072D88AB25009ABDF2 /* TappWidgetTests */,
+				2C4C1D112D88AB25009ABDF2 /* TappWidgetUITests */,
+				2C4C1D282D88AB5F009ABDF2 /* TappWidgetExtensionExtension */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		2C4C1CF62D88AB24009ABDF2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2C4C1D062D88AB25009ABDF2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2C4C1D102D88AB25009ABDF2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2C4C1D272D88AB5F009ABDF2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2C4C1CF42D88AB24009ABDF2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2C4C1D802D88ADDA009ABDF2 /* NetworkLogger.swift in Sources */,
+				2C4C1D812D88ADDA009ABDF2 /* HTTPTask.swift in Sources */,
+				2C4C1D822D88ADDA009ABDF2 /* JSONParameterEncoder.swift in Sources */,
+				2C4C1D832D88ADDA009ABDF2 /* RequestParser.swift in Sources */,
+				2C4C1D842D88ADDA009ABDF2 /* Persistence.swift in Sources */,
+				2C4C1D852D88ADDA009ABDF2 /* HTTPMethod.swift in Sources */,
+				2C4C1D862D88ADDA009ABDF2 /* ParameterEncoding.swift in Sources */,
+				2C4C1D872D88ADDA009ABDF2 /* URLParameterEncoding.swift in Sources */,
+				2C4C1D882D88ADDA009ABDF2 /* EndPointType.swift in Sources */,
+				2C4C1D892D88ADDA009ABDF2 /* API.swift in Sources */,
+				2C4C1D8A2D88ADDA009ABDF2 /* NetworkRouter.swift in Sources */,
+				2C4C1D8B2D88ADDA009ABDF2 /* NetworkManagerNew.swift in Sources */,
+				2C4C1D8C2D88ADDA009ABDF2 /* Extensions.swift in Sources */,
+				2C4C1D8D2D88ADDA009ABDF2 /* Constants.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2C4C1D042D88AB25009ABDF2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2C4C1D0E2D88AB25009ABDF2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2C4C1D252D88AB5F009ABDF2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2C4C1D8E2D88ADDA009ABDF2 /* NetworkLogger.swift in Sources */,
+				2C4C1D8F2D88ADDA009ABDF2 /* HTTPTask.swift in Sources */,
+				2C4C1D902D88ADDA009ABDF2 /* JSONParameterEncoder.swift in Sources */,
+				2C4C1D912D88ADDA009ABDF2 /* RequestParser.swift in Sources */,
+				2C4C1D922D88ADDA009ABDF2 /* Persistence.swift in Sources */,
+				2C4C1D932D88ADDA009ABDF2 /* HTTPMethod.swift in Sources */,
+				2C4C1D942D88ADDA009ABDF2 /* ParameterEncoding.swift in Sources */,
+				2C4C1D952D88ADDA009ABDF2 /* URLParameterEncoding.swift in Sources */,
+				2C4C1D962D88ADDA009ABDF2 /* EndPointType.swift in Sources */,
+				2C4C1D972D88ADDA009ABDF2 /* API.swift in Sources */,
+				2C4C1D982D88ADDA009ABDF2 /* NetworkRouter.swift in Sources */,
+				2C4C1D992D88ADDA009ABDF2 /* NetworkManagerNew.swift in Sources */,
+				2C4C1D9A2D88ADDA009ABDF2 /* Extensions.swift in Sources */,
+				2C4C1D9B2D88ADDA009ABDF2 /* Constants.swift in Sources */,
+				2C4C1D672D88AD28009ABDF2 /* ExtensionManager.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		2C4C1D0A2D88AB25009ABDF2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2C4C1CF72D88AB24009ABDF2 /* TappWidget */;
+			targetProxy = 2C4C1D092D88AB25009ABDF2 /* PBXContainerItemProxy */;
+		};
+		2C4C1D142D88AB25009ABDF2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2C4C1CF72D88AB24009ABDF2 /* TappWidget */;
+			targetProxy = 2C4C1D132D88AB25009ABDF2 /* PBXContainerItemProxy */;
+		};
+		2C4C1D3E2D88AB61009ABDF2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2C4C1D282D88AB5F009ABDF2 /* TappWidgetExtensionExtension */;
+			targetProxy = 2C4C1D3D2D88AB61009ABDF2 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		2C4C1D1A2D88AB25009ABDF2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		2C4C1D1B2D88AB25009ABDF2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		2C4C1D1D2D88AB25009ABDF2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"TappWidget/Preview Content\"";
+				DEVELOPMENT_TEAM = UVPCE6PG4A;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.shulman.TappWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		2C4C1D1E2D88AB25009ABDF2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"TappWidget/Preview Content\"";
+				DEVELOPMENT_TEAM = UVPCE6PG4A;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.shulman.TappWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		2C4C1D202D88AB25009ABDF2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = UVPCE6PG4A;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.shulman.TappWidgetTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TappWidget.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/TappWidget";
+			};
+			name = Debug;
+		};
+		2C4C1D212D88AB25009ABDF2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = UVPCE6PG4A;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.shulman.TappWidgetTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TappWidget.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/TappWidget";
+			};
+			name = Release;
+		};
+		2C4C1D232D88AB25009ABDF2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = UVPCE6PG4A;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.shulman.TappWidgetUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = TappWidget;
+			};
+			name = Debug;
+		};
+		2C4C1D242D88AB25009ABDF2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = UVPCE6PG4A;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.shulman.TappWidgetUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = TappWidget;
+			};
+			name = Release;
+		};
+		2C4C1D422D88AB61009ABDF2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = TappWidgetExtensionExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = UVPCE6PG4A;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = TappWidgetExtension/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = TappWidgetExtension;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.shulman.TappWidget.TappWidgetExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		2C4C1D432D88AB61009ABDF2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = TappWidgetExtensionExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = UVPCE6PG4A;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = TappWidgetExtension/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = TappWidgetExtension;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.shulman.TappWidget.TappWidgetExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2C4C1CF32D88AB24009ABDF2 /* Build configuration list for PBXProject "TappWidget" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2C4C1D1A2D88AB25009ABDF2 /* Debug */,
+				2C4C1D1B2D88AB25009ABDF2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2C4C1D1C2D88AB25009ABDF2 /* Build configuration list for PBXNativeTarget "TappWidget" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2C4C1D1D2D88AB25009ABDF2 /* Debug */,
+				2C4C1D1E2D88AB25009ABDF2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2C4C1D1F2D88AB25009ABDF2 /* Build configuration list for PBXNativeTarget "TappWidgetTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2C4C1D202D88AB25009ABDF2 /* Debug */,
+				2C4C1D212D88AB25009ABDF2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2C4C1D222D88AB25009ABDF2 /* Build configuration list for PBXNativeTarget "TappWidgetUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2C4C1D232D88AB25009ABDF2 /* Debug */,
+				2C4C1D242D88AB25009ABDF2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2C4C1D412D88AB61009ABDF2 /* Build configuration list for PBXNativeTarget "TappWidgetExtensionExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2C4C1D422D88AB61009ABDF2 /* Debug */,
+				2C4C1D432D88AB61009ABDF2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 2C4C1CF02D88AB24009ABDF2 /* Project object */;
+}
