@@ -796,6 +796,7 @@
 				CODE_SIGN_ENTITLEMENTS = TappWidgetExtensionExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = UVPCE6PG4A;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = TappWidgetExtension/Info.plist;
@@ -824,6 +825,7 @@
 				CODE_SIGN_ENTITLEMENTS = TappWidgetExtensionExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = UVPCE6PG4A;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = TappWidgetExtension/Info.plist;

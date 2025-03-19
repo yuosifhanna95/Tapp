@@ -24,7 +24,7 @@ struct SpinProvider: TimelineProvider {
     
     func getTimeline(in context: Context, completion: @escaping (Timeline<SpinEntry>) -> Void) {
         
-        //MARK: Check network, if there is, get .start entry.. if no, get .noNetwork entry
+        //MARK: Check network, if there is, get .start entry.. if no, get .noNetwork entry7
         
 //        WheelGameManager.shared.setDisplayConfig(size: context.displaySize)
         let entries = TimeLineManager.shared.getTimelineSpinEntries(state: TimeLineManager.shared.timeLineType)

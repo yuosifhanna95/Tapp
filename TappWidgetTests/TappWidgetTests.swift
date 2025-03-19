@@ -9,9 +9,34 @@ import Testing
 @testable import TappWidget
 
 struct TappWidgetTests {
-
-    @Test func example() async throws {
-        // Write your test here and use APIs like `#expect(...)` to check expected conditions.
+    
+    @Test func testWheelPrizeDataAPI() async throws {
+        
+        let networkManager = NetworkManagerNew()
+        
+        let result = await networkManager.sendRequestWithService(api: API.getWheelPrizeData)
+        
+        #expect(result.data != nil)
+    }
+    
+    @Test func testWheelSendPrizeAPI() async throws {
+        
+        let networkManager = NetworkManagerNew()
+        
+        let result = await networkManager.sendRequestWithService(api: API.sendPrize(playerId: "1", prize: "prize", type: "wheel"))
+        
+        #expect(result.data != nil)
+    }
+    
+    @Test func testPersistanceGetCachedPrizes() async throws {
+        
+        let persistenceManager = PersistenceManager()
+                
+        let dictionary: Dictionary<String,AnyObject>? = persistenceManager.load(forKey: Constants.WheelOfCoins.keyCachedPrizesWheel)
+        
+        #expect(dictionary != nil)
     }
 
 }
+        
+        
