@@ -13,11 +13,11 @@ struct NoNetworkView : View {
     let scaler: CGFloat
     
     var body: some View {
+        Rectangle()
+            .fill(Color.black.opacity(0.45))
+            .frame(width: WheelGameManager.shared.width, height: WheelGameManager.shared.height)
         
-        ZStack {
-            
-        }
-        .overlay(Color.black.opacity(0.45))
+        //.overlay()
         //.overlay(Color.black.opacity(!entry.networkAvailable ? 0.45 : 0)
 //            .frame(width: 200, height: 200, alignment: .center))
         Text("Network Unavailable")

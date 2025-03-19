@@ -13,7 +13,7 @@ class PrizeManager {
     static let shared = PrizeManager()
     private let persistenceManager = PersistenceManager()
     
-    var circleIcons: [Image] = [.init("c1", bundle: .main), .init("e1", bundle: .main), .init("g1", bundle: .main), .init("gift", bundle: .main), .init("c2", bundle: .main), .init("e2", bundle: .main), .init("g2", bundle: .main), .init("gift", bundle: .main), .init("c3", bundle: .main), .init("e3", bundle: .main), .init("g3", bundle: .main), .init("gift", bundle: .main) ]
+    //var circleIcons: [Image] = [.init("c1", bundle: .main), .init("e1", bundle: .main), .init("g1", bundle: .main), .init("gift", bundle: .main), .init("c2", bundle: .main), .init("e2", bundle: .main), .init("g2", bundle: .main), .init("gift", bundle: .main), .init("c3", bundle: .main), .init("e3", bundle: .main), .init("g3", bundle: .main), .init("gift", bundle: .main) ]
     
     var prizes: [String] = ["c1", "e1", "g1", "gift", "c2", "e2", "g2", "gift", "c3", "e3", "g3", "gift"]
     
@@ -46,23 +46,23 @@ class PrizeManager {
             return
         }
         if let prizes = cache["prizes"] as? [String] {
-            self.circleIcons = self.fillprizes(prizes: prizes)
+            self.fillprizes(prizes: prizes)
         }
     }
     
-    func fillprizes(prizes: [String]) -> [Image] {
-        var arr : [Image] = []
+    func fillprizes(prizes: [String]) {
+        //var arr : [Image] = []
         self.prizes = []
         for prize in prizes {
-            arr.append(Image(prize, bundle: .main))
+            //arr.append(Image(prize, bundle: .main))
             self.prizes.append(prize)
         }
-       return arr
+       //return arr
     }
     
     func loadPrizeData() {
         let networkManager = NetworkManagerNew()
-        networkManager.sendRequestWithService(api: API.getWheelPrizeData) { data, error, statusCode in
+        networkManager.sendRequestWithService(api: API.mock) { data, error, statusCode in
             guard let data = data as? Dictionary<String, AnyObject> else {
                 return
             }
@@ -80,7 +80,7 @@ class PrizeManager {
 //            }
             
             if(!self.didLoadedPrizes) {
-                self.circleIcons = self.fillprizes(prizes: prizes)
+                self.fillprizes(prizes: prizes)
                 self.didLoadedPrizes = true
                 WidgetCenter.shared.reloadTimelines(ofKind: Constants.WheelOfCoins.keyWOCWidget)
             }

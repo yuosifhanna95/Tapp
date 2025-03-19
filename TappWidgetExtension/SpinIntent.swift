@@ -18,7 +18,7 @@ struct SpinIntent: AppIntent {
     func perform() async throws -> some IntentResult {
         
         //MARK: We can check here for network connection, before returning the result() that will refresh the timeline, and then execute some logic depending on the network conditions
-
+        
         WheelGameManager.shared.perform()
 //        TimeLineManager.shared.timeLineType = .spinning(model: SpiningWheelStateModel(rotationAngle: 360.0, firstOpacity: 10.0, secondOpacity: 0.0))
 //        

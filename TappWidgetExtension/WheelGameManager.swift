@@ -91,8 +91,8 @@ class WheelGameManager {
 //            return
 //        }
         spinButtonClicked = true
-        TimeLineManager.shared.timeLineType = .start
-        TimeLineManager.shared.previousTimeLineType = .start
+        TimeLineManager.shared.timeLineType = .start(model: SpinningWheelStateModel(rotationAngle: 0, firstOpacity: 1.0, secondOpacity: 0.001))
+        TimeLineManager.shared.previousTimeLineType = .start(model: SpinningWheelStateModel(rotationAngle: 0, firstOpacity: 1.0, secondOpacity: 0.001))
         // prepare a boolean value to retrieve possible new prizes
         PrizeManager.shared.didLoadedPrizes = false
         
@@ -133,7 +133,7 @@ class WheelGameManager {
     }
     
     static func isSpinUnavailable(entry: SpinEntry) -> Bool{
-        return (WheelGameManager.isTimerActive(entry: entry)) && entry.state == .unAvailable
+        return (WheelGameManager.isTimerActive(entry: entry)) && entry.state == .unAvailable(model: SpinningWheelStateModel(rotationAngle: 0.0, firstOpacity: 0.0, secondOpacity: 0.0), prizes: PrizeManager.shared.prizes)
     }
     
     func updatePlayerID(data: Any?) {

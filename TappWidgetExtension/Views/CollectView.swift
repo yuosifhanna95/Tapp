@@ -1,14 +1,15 @@
 //
-//  SpinUnavailableView.swift
-//  Unity-iPhone
+//  CollectView.swift
+//  TappWidget
 //
-//  Created by Yuosif Hanna on 17/03/2025.
+//  Created by Yuosif Hanna on 19/03/2025.
 //
+
 import SwiftUI
 import AppIntents
 
 @available(iOS 17, *)
-struct SpinUnavailableView : View {
+struct CollectView : View {
     
     let entry: SpinEntry
     let spinningModel: SpinningWheelStateModel?
@@ -35,34 +36,28 @@ struct SpinUnavailableView : View {
             
         }
 //        .background(content: {
-//            
+//
 //            //------------------------------------- Background
-//            
+//
 //            BackgroundImageView(rotation: rotation, duration: TimeInterval(1.0), scaler: scaler)
-//            
+//
 ////            BackgroundImageView(entry: entry)
 ////                .scaledToFill()
-//            
+//
 //        })
         .overlay {
-            SparksView(firstSparkOpacity:  1.0, secondSparkOpacity: 0.001)
+            SparksView(firstSparkOpacity: spinningModel?.firstOpacity ?? 1.0, secondSparkOpacity: spinningModel?.secondOpacity ?? 0.001)
         }
         .overlay(Color.black.opacity(0.45)
             .frame(width: 200, height: 200, alignment: .center))
         .overlay {
-            DigitalClockView(lastSpinDate: WheelGameManager.shared.lastSpinDate, spinTime: WheelGameManager.shared.spinTime)
+            
             //MARK: CHECK THIS:
             
-            //ClaimRewardView(selectedImagePrize: PrizeManager.shared.selectedImagePrize, scaler: scaler, destinationUrl: URL(string: ExtensionManager.shared.getWidgetURL(entry: entry, claimView: true))!)
+            ClaimRewardView(selectedImagePrize: PrizeManager.shared.selectedImagePrize, scaler: scaler, destinationUrl: URL(string: ExtensionManager.shared.getWidgetURL(entry: entry, claimView: true))!)
             
-//            if(entry.networkAvailable) {
-//                if(entry.state == .collect) {
-//                    ClaimRewardView(entry: entry)
-//                }
-//                else if(entry.state == .unAvailable) {
-//                    DigitalClockView()
-//                }
-//            }
+            //DigitalClockView(lastSpinDate: entry.date, spinTime: WheelGameManager.shared.spinTime)
+            
         }
         .overlay {
             
@@ -73,7 +68,7 @@ struct SpinUnavailableView : View {
 //            }
         }
         .containerBackground(for: .widget, content: {
-            BackgroundImageView(rotation: rotation, duration: TimeInterval(1.5), scaler: scaler)
+            BackgroundImageView(rotation: rotation, duration: TimeInterval(1.0), scaler: scaler)
         })
     }
 }

@@ -14,7 +14,7 @@ protocol PersistenceProtocol {
 
 class PersistenceManager: PersistenceProtocol {
     
-    let groupName = "group.com.shulman.TappWidget.TappWidgetExtension"
+    let groupName = "group.com.CompanyYH.TappWidget.TappWidgetExtension"
     
     func save<T>(_ value: T, forKey key: String) {
         UserDefaults.init(suiteName: groupName)?.set(value, forKey: key)

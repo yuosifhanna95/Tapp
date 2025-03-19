@@ -24,7 +24,7 @@ class ExtensionManager {
 
     }
     func getWidgetURL(entry: SpinEntry, claimView: Bool) -> String{
-        return "\(ExtensionManager.shared.urlScheme)://?WidgetType=WOC&Action=\(claimView ? "Collect" : (entry.state == .collect(prizes: []) ? "Collect" : "Click"))&Reward=\(PrizeManager.shared.getSelectedPrizeValue())&playerid=\(WheelGameManager.shared.playerID)&Date=\(WheelGameManager.shared.strDate.formattedString())&Type=\(Constants.WheelOfCoins.keyWOCWidget)&hash=nil"
+        return "\(ExtensionManager.shared.urlScheme)://?WidgetType=WOC&Action=\(claimView ? "Collect" : (entry.state == .collect(model: SpinningWheelStateModel(rotationAngle: 0, firstOpacity: 0.0, secondOpacity: 0.0), prizes: []) ? "Collect" : "Click"))&Reward=\(PrizeManager.shared.getSelectedPrizeValue())&playerid=\(WheelGameManager.shared.playerID)&Date=\(WheelGameManager.shared.strDate.formattedString())&Type=\(Constants.WheelOfCoins.keyWOCWidget)&hash=nil"
     }
     
     

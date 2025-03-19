@@ -20,13 +20,13 @@ struct BackgroundImageView : View {
                 .resizable()
                 .scaledToFill()
                 .aspectRatio(contentMode: .fill)
-//                    .frame(width: geometry.size.width, height: geometry.size.height, alignment: .topLeading)
+                    .frame(width: WheelGameManager.shared.width, height: WheelGameManager.shared.height)
 //                    .position(CGPoint(x: 50, y: 50))
             Image("glow", bundle: .main)
                 .resizable()
                 .scaledToFill()
-//                .aspectRatio(contentMode: .fill)
-//                        .frame(width: geometry.size.width * 1.5 , height: geometry.size.height * 1.5)
+                .aspectRatio(contentMode: .fill)
+                        .frame(width: WheelGameManager.shared.width * 1.5 , height: WheelGameManager.shared.height * 1.5)
                 .rotationEffect(.degrees(rotation / 60))
                 .animation(.spring(duration: duration), value: rotation) // MARK: duration variable, check if it can be set inside this view locally, if it doesnt change from outside for different durations.
             
@@ -34,7 +34,7 @@ struct BackgroundImageView : View {
                 .resizable()
                 .scaledToFill()
                 .aspectRatio(contentMode: .fill)
-//                        .frame(width: 115 * scaler, height: 160 * scaler) //MARK: magic numbers
+                .frame(width: 115 * scaler, height: 160 * scaler) //MARK: magic numbers
             
         }
 //        ZStack{

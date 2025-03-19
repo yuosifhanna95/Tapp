@@ -13,8 +13,8 @@ class TimeLineManager {
     static let shared = TimeLineManager()
     private let persistenceManager = PersistenceManager()
     
-    var timeLineType: SpinEntryState = .start
-    var previousTimeLineType: SpinEntryState = .start
+    var timeLineType: SpinEntryState = .start(model: SpinningWheelStateModel(rotationAngle: 0, firstOpacity: 1.0, secondOpacity: 0.001))
+    var previousTimeLineType: SpinEntryState = .start(model: SpinningWheelStateModel(rotationAngle: 0, firstOpacity: 1.0, secondOpacity: 0.001))
     var entries: [SpinEntry] = []
     
     init() { }
@@ -22,47 +22,54 @@ class TimeLineManager {
     func getTimelineSpinEntries(state: SpinEntryState) -> [SpinEntry] {
         
         switch state {
-        case .start:
+        case .start(model: let model):
             persistenceManager.save(false, forKey: Constants.WheelOfCoins.keyClaimButtonClicked)
+            if(WheelGameManager.shared.spinButtonClicked) {
+                TimeLineManager.shared.timeLineType = .collect(model: model, prizes: PrizeManager.shared.prizes)
+                TimeLineManager.shared.previousTimeLineType = .collect(model: model, prizes: PrizeManager.shared.prizes)
+                return getRotationSpinEntry()
+            }
+            return getSpinStartEntries()
+        case .spinning(model: let model):
+            /*persistenceManager.save(false, forKey: Constants.WheelOfCoins.keyClaimButtonClicked)
             if(WheelGameManager.shared.spinButtonClicked) {
                 TimeLineManager.shared.timeLineType = state
                 TimeLineManager.shared.previousTimeLineType = state
                 return getRotationSpinEntry()
-            }
-            return getSpinStartEntries()
+            }*/
+            return []
+            
         case .collect:
             WheelGameManager.shared.spinButtonClicked = false
             let wocClaimBClicked = persistenceManager.load(forKey: Constants.WheelOfCoins.keyClaimButtonClicked) ?? false
             guard wocClaimBClicked == false else {
-                TimeLineManager.shared.timeLineType = .unAvailable
-                TimeLineManager.shared.previousTimeLineType = .unAvailable
+                TimeLineManager.shared.timeLineType = .unAvailable(model: SpinningWheelStateModel(rotationAngle: 0.0, firstOpacity: 1.0, secondOpacity: 0.001), prizes: [])
+                TimeLineManager.shared.previousTimeLineType = .unAvailable(model: SpinningWheelStateModel(rotationAngle: 0.0, firstOpacity: 1.0, secondOpacity: 0.001), prizes: [])
                 return getSpinUnavailablefor8hoursEntries()
+            }
+            let fucko = TimeLineManager.shared.entries.first?.state
+            if(fucko == .collect(model: SpinningWheelStateModel(rotationAngle: 0, firstOpacity: 0, secondOpacity: 0), prizes: []) || fucko == .noNetwork(prizes: [])) {
+                return [SpinEntry(date: Date.now, state: .collect(model: SpinningWheelStateModel(rotationAngle: Double(WheelGameManager.shared.randomOffset), firstOpacity: 1.0, secondOpacity: 0.001), prizes: PrizeManager.shared.prizes))]
             }
             return []
         case .unAvailable:
+            
             let FinalDate = WheelGameManager.shared.lastSpinDate.addingTimeInterval(TimeInterval(Double( Int(WheelGameManager.shared.spinTime)) - 0.5))
             if(FinalDate < Date.now) {
-                TimeLineManager.shared.timeLineType = .start
-                TimeLineManager.shared.previousTimeLineType = .start
+                TimeLineManager.shared.timeLineType = .start(model: SpinningWheelStateModel(rotationAngle: 0, firstOpacity: 1.0, secondOpacity: 0.001))
+                TimeLineManager.shared.previousTimeLineType = .start(model: SpinningWheelStateModel(rotationAngle: 0, firstOpacity: 1.0, secondOpacity: 0.001))
                 return getSpinStartEntries()
             }
             return []
             
         case .noNetwork:
+            //return []
             return copyEntriesWithNoNetwork()
-//            if(NetworkManager.networkAvailable) {
-//                return copyEntriesWithNetwork()
-//            } else {
-//                return copyEntriesWithNoNetwork()
-//            }
-        case .spinning(model: let model):
-            persistenceManager.save(false, forKey: Constants.WheelOfCoins.keyClaimButtonClicked)
-            if(WheelGameManager.shared.spinButtonClicked) {
-                TimeLineManager.shared.timeLineType = state
-                TimeLineManager.shared.previousTimeLineType = state
-                return getRotationSpinEntry()
-            }
-            return getSpinStartEntries()
+            //            if(NetworkManager.networkAvailable) {
+            //                return copyEntriesWithNetwork()
+            //            } else {
+            //                return copyEntriesWithNoNetwork()
+            //            }
         }
     }
     
@@ -73,7 +80,7 @@ class TimeLineManager {
         case .collect:
 //            TimeLineManager.shared.timeLineType = .collect
             let entry = TimeLineManager.shared.entries.last
-            return [SpinEntry(date: Date.now.addingTimeInterval(1), state: wocClaimBClicked ? .unAvailable : .collect(prizes: ["PASS SOME PRIZES HERE"]))]
+            return [SpinEntry(date: Date.now.addingTimeInterval(1), state: wocClaimBClicked ? .unAvailable(model: SpinningWheelStateModel(rotationAngle: 0.0, firstOpacity: 1.0, secondOpacity: 0.001), prizes: PrizeManager.shared.prizes) : .collect(model: SpinningWheelStateModel(rotationAngle: 0, firstOpacity: 1.0, secondOpacity: 0.001), prizes: PrizeManager.shared.prizes))]
         case .start:
 //            TimeLineManager.shared.timeLineType = .start
             WheelGameManager.shared.spinButtonClicked = false
@@ -90,7 +97,7 @@ class TimeLineManager {
         }
         var copiedEntries : [SpinEntry] = []
         if(TimeLineManager.shared.entries.isEmpty) {
-            TimeLineManager.shared.timeLineType = .start
+            TimeLineManager.shared.timeLineType = .start(model: SpinningWheelStateModel(rotationAngle: 0, firstOpacity: 1.0, secondOpacity: 0.001))
             return getSpinStartEntries()
         }
         var ind = 0
@@ -106,24 +113,25 @@ class TimeLineManager {
         var copiedEntries : [SpinEntry] = []
         switch TimeLineManager.shared.previousTimeLineType {
         case .start:
-            return getSpinStartEntries()
+            return getSpinStartEntriesWithNoNetwork()
         case .collect:
             let wocClaimBClicked = persistenceManager.load(forKey: Constants.WheelOfCoins.keyClaimButtonClicked) ?? false
             if(wocClaimBClicked) {
-                return getSpinUnavailablefor8hoursEntries()
+                return getSpinStartEntriesWithNoNetwork()//getSpinUnavailablefor8hoursEntries()
             }
-            let entry = SpinEntry(date: Date.now, state: .collect(prizes: PrizeManager.shared.prizes))
+            let entry = SpinEntry(date: Date.now, state: .noNetwork(prizes: PrizeManager.shared.prizes))
 //            return [SpinEntry(date: Date.now, rotation: Double(WheelGameManager.shared.randomOffset), duration: 0, prizes: WheelGameManager.shared.currentSpinEntry?.prizes ?? PrizeManager.shared.prizes, sparkOpacityP1: 1.0, sparkOpacityP2: 0.001, networkAvailable: NetworkManager.networkAvailable, state: .collect)]
             return [entry]
         case .unAvailable:
-            return getSpinUnavailablefor8hoursEntries()
+            return getSpinStartEntriesWithNoNetwork()//getSpinUnavailablefor8hoursEntries()
         case .noNetwork:
             print("error previousTimeLineType shouldnt be noNetwork")
         case .spinning(model: let model):
+            return getSpinStartEntriesWithNoNetwork()
             print("error previousTimeLineType shouldnt be noNetwork")
         }
         if(TimeLineManager.shared.entries.isEmpty) {
-            TimeLineManager.shared.timeLineType = .start
+            TimeLineManager.shared.timeLineType = .start(model: SpinningWheelStateModel(rotationAngle: 0, firstOpacity: 1.0, secondOpacity: 0.001))
             return getSpinStartEntries()
         }
         for entry in TimeLineManager.shared.entries {
@@ -145,12 +153,12 @@ class TimeLineManager {
         var entries = [SpinEntry]()
         for offset in 0 ..< 2  {
             if(offset == 0) {
-                let spinEntryStateModel = SpiningWheelStateModel(rotationAngle: Double(WheelGameManager.shared.randomOffset) + Double(fullRotations), firstOpacity: 0.001, secondOpacity: 2.0)
+                let spinEntryStateModel = SpinningWheelStateModel(rotationAngle: Double(WheelGameManager.shared.randomOffset) + Double(fullRotations), firstOpacity: 0.001, secondOpacity: 2.0)
                 let spinEntry = SpinEntry(date: currentDate.addingTimeInterval(TimeInterval(offset*2)), state: .spinning(model: spinEntryStateModel))
                 entries.append(spinEntry)
 //                entries.append(SpinEntry(date: currentDate.addingTimeInterval(TimeInterval(offset*2)), rotation: Double(WheelGameManager.shared.randomOffset) + Double(fullRotations), duration: 1.5, prizes: WheelGameManager.shared.currentSpinEntry?.prizes ?? PrizeManager.shared.prizes, sparkOpacityP1: 0.001, sparkOpacityP2: 2.0, networkAvailable: NetworkManager.networkAvailable, state: .spinning))
             } else {
-                let collectEntry = SpinEntry(date: currentDate.addingTimeInterval(TimeInterval(offset*2)), state: .collect(prizes: PrizeManager.shared.prizes))
+                let collectEntry = SpinEntry(date: currentDate.addingTimeInterval(TimeInterval(offset*2)), state: .collect(model: SpinningWheelStateModel(rotationAngle: Double(WheelGameManager.shared.randomOffset) + Double(fullRotations), firstOpacity: 1.0, secondOpacity: 0.001), prizes: PrizeManager.shared.prizes))
                 entries.append(collectEntry)
 //                entries.append(SpinEntry(date: currentDate.addingTimeInterval(TimeInterval(offset*2)), rotation: Double(WheelGameManager.shared.randomOffset) + Double(fullRotations), duration: 0, prizes: WheelGameManager.shared.currentSpinEntry?.prizes ?? PrizeManager.shared.prizes, sparkOpacityP1: 1.0, sparkOpacityP2: 0.001, networkAvailable: NetworkManager.networkAvailable, state: .collect))
             }
@@ -166,20 +174,21 @@ class TimeLineManager {
         var FinalDate = WheelGameManager.shared.lastSpinDate.addingTimeInterval(TimeInterval(Double( Int(WheelGameManager.shared.spinTime)) - 0.5))
         if(FinalDate < Date.now) {
             FinalDate = Date.now
-            let startEntry = SpinEntry(date: Date.now, state: .start)
+            let startEntry = SpinEntry(date: Date.now, state: .start(model: SpinningWheelStateModel(rotationAngle: 0, firstOpacity: 1.0, secondOpacity: 0.001)))
 //            let EndEntry = SpinEntry(date: Date.now, rotation: 0, duration: 0, prizes: PrizeManager.shared.prizes, sparkOpacityP1: 1.0, sparkOpacityP2: 0.001, networkAvailable: NetworkManager.networkAvailable, state: .start)
             WheelGameManager.shared.currentSpinEntry = startEntry
             return [startEntry]
         }
+     
         let entryDate = Date.now
         for offset in 0 ..< 2  {
             if(offset == 0) {
-                let unAvailableEntry = SpinEntry(date: entryDate, state: .unAvailable)
+                let unAvailableEntry = SpinEntry(date: entryDate, state: .unAvailable(model: SpinningWheelStateModel(rotationAngle: 0, firstOpacity: 1.0, secondOpacity: 0.001), prizes: PrizeManager.shared.prizes))
                 entries.append(unAvailableEntry)
 //                entries.append(SpinEntry(date: entryDate, rotation: 0, duration: 0, prizes: PrizeManager.shared.prizes, sparkOpacityP1: 1.0, sparkOpacityP2: 0.001, networkAvailable: NetworkManager.networkAvailable, state: .unAvailable))
             }
             else {
-                let startEntry = SpinEntry(date: entryDate, state: .start)
+                let startEntry = SpinEntry(date: FinalDate, state: .start(model: SpinningWheelStateModel(rotationAngle: 0, firstOpacity: 1.0, secondOpacity: 0.001)))
                 entries.append(startEntry)
 //                entries.append(SpinEntry(date: FinalDate, rotation: 0, duration: 0, prizes: PrizeManager.shared.prizes, sparkOpacityP1: 1.0, sparkOpacityP2: 0.001, networkAvailable: NetworkManager.networkAvailable, state: .start))
             }
@@ -193,7 +202,19 @@ class TimeLineManager {
         var entries = [SpinEntry]()
         for offset in 0 ..< 2  {
             let entryDate = Calendar.current.date(byAdding: .second, value: offset * 3, to: currentDate)!
-            let startEntry = SpinEntry(date: entryDate, state: .start)
+            let startEntry = SpinEntry(date: entryDate, state: .start(model: SpinningWheelStateModel(rotationAngle: 0, firstOpacity: 1.0, secondOpacity: 0.001)))
+            entries.append(startEntry)
+//            entries.append(SpinEntry(date: entryDate, rotation: 0, duration: 0, prizes: PrizeManager.shared.prizes, sparkOpacityP1: 1.0, sparkOpacityP2: 0.001, networkAvailable: NetworkManager.networkAvailable, state: .start))
+        }
+        WheelGameManager.shared.currentSpinEntry = entries[0]
+        return entries
+    }
+    func getSpinStartEntriesWithNoNetwork() -> [SpinEntry] {
+        let currentDate = Date()
+        var entries = [SpinEntry]()
+        for offset in 0 ..< 2  {
+            let entryDate = Calendar.current.date(byAdding: .second, value: offset * 3, to: currentDate)!
+            let startEntry = SpinEntry(date: entryDate, state: .noNetwork(prizes: PrizeManager.shared.prizes))
             entries.append(startEntry)
 //            entries.append(SpinEntry(date: entryDate, rotation: 0, duration: 0, prizes: PrizeManager.shared.prizes, sparkOpacityP1: 1.0, sparkOpacityP2: 0.001, networkAvailable: NetworkManager.networkAvailable, state: .start))
         }

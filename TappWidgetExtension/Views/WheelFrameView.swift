@@ -15,12 +15,11 @@ struct WheelFrameView : View {
     
     var body: some View {
         ZStack {
-            
             //------------------------------------- Wheel
             
             Image("wheel", bundle: .main)
                 .resizable()
-//                .frame(width: circleFrame-10,height: circleFrame-10)
+                .frame(width: circleFrame - 10,height: circleFrame - 10)
             
             //------------------------------------- Prize Images
             

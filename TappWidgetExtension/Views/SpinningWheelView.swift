@@ -10,10 +10,10 @@ import SwiftUICore
 struct SpinningWheelView: View {
     
     let entry: SpinEntry
-    let spinningModel: SpiningWheelStateModel?
+    let spinningModel: SpinningWheelStateModel?
     
     private let scaler = WheelGameManager.shared.scaler
-    private let circleFrame = 150.0
+    private let circleFrame = 145.0
     
     private var firstSparksOpacity: CGFloat {
         return spinningModel?.firstOpacity ?? 0.0
@@ -46,7 +46,7 @@ struct SpinningWheelView: View {
 //        })
         
         .containerBackground(for: .widget, content: {
-            BackgroundImageView(rotation: rotation, duration: TimeInterval(1.0), scaler: scaler)
+            BackgroundImageView(rotation: rotation, duration: TimeInterval(1.5), scaler: scaler)
         })
     }
 }

@@ -11,11 +11,11 @@ import AppIntents
 struct WheelView : View {
     
     let entry: SpinEntry
-    let spinningModel: SpiningWheelStateModel?
+    let spinningModel: SpinningWheelStateModel?
     
     private let scaler = WheelGameManager.shared.scaler
-    private let rotation = 360.0
-    private let circleFrame = 150.0
+    private let rotation: Double = 0.0
+    private let circleFrame = 145.0
     
     private var firstSparksOpacity: CGFloat {
         return spinningModel?.firstOpacity ?? 0.0
@@ -30,7 +30,7 @@ struct WheelView : View {
 
             //------------------------------------- Wheel Frame
             
-            WheelFrameView(circleFrame: circleFrame, rotation: rotation, prizes: PrizeManager.shared.prizes, scaler: scaler)
+            WheelFrameView(circleFrame: circleFrame, rotation: spinningModel?.rotationAngle ?? rotation, prizes: PrizeManager.shared.prizes, scaler: scaler)
             
             //------------------------------------- Outer Frame
             
@@ -39,7 +39,7 @@ struct WheelView : View {
             
             //------------------------------------- Spin Button
             
-            SpinButtonView(entry: entry, scaler: scaler, opacity: 1.0, isDisabled: false)
+            SpinButtonView(entry: entry, scaler: scaler, opacity: 0.0, isDisabled: false)
             
                         
             SparksView(firstSparkOpacity: firstSparksOpacity, secondSparkOpacity: secondSparksOpacity)
@@ -57,8 +57,9 @@ struct WheelView : View {
 //            
 //        })
         .containerBackground(for: .widget, content: {
-            BackgroundImageView(rotation: rotation, duration: TimeInterval(1.0), scaler: scaler)
+            BackgroundImageView(rotation: rotation, duration: TimeInterval(1.5), scaler: scaler)
         })
+        
 //        .containerBackground(.black, for: .widget)
         //MARK: There is a special view for no network state
 //        .overlay {

@@ -6,12 +6,18 @@
 //
 
 import SwiftUI
+import WidgetKit
 
 @main
 struct TappWidgetApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .onOpenURL { incomingURL in
+                    UserDefaults.init(suiteName: "group.com.CompanyYH.TappWidget.TappWidgetExtension")?.set(true, forKey: "WOCClaimButtonClicked")
+                    WidgetCenter.shared.reloadAllTimelines()
+                }
         }
+        
     }
 }
